@@ -1,0 +1,65 @@
+# Instrucciones para ejecutar el proyecto
+
+1. Instalar las dependencias:
+   - Ejecutar el siguiente comando:
+     pip install Flask beautifulsoup4 requests transformers torch sqlite3
+
+2. Ejecutar la base de datos:
+   
+   - El archivo 'db.sqlite' es el archivo de base de datos.
+   - En caso de que el archivo de datos no esté presente el comando 'python database.py' (Sin comillas) en el directorio del proyecto creará una nueva base de datos (Con las columnas     	respectivas).
+
+3. Ejecutar el servidor Flask: 
+   - Navegar al directorio del proyecto y ejecutar: 'python app.py' (Sin comillas)
+   - El servidor estará disponible en http://127.0.0.1:5000
+
+4. Usar los endpoints:
+   - POST /scrape: Para extraer titulares y descripciones de una URL.
+   - POST /process: Para procesar un texto y obtener el análisis de sentimiento.
+   - POST /combined: Para combinar el scraping y procesamiento en un solo paso.
+
+
+5. Pruebas:
+   - Las pruebas se realizaron con Postman.
+
+	Ejemplo:
+
+	Solicitud POST a http://127.0.0.1:5000/scrape
+
+	Solicitud POST a http://127.0.0.1:5000/combined
+
+	Ejemplo Body Raw json: 
+
+	{
+    		"url": "https://www.t13.cl/noticia/politica/declaraciones-jefe-gabinete-funcionarios-del-hotel-panamericano-dan-cuenta-mons-24-12-2024"
+	}
+
+
+
+	Solicitud POST a http://127.0.0.1:5000/process
+
+
+	Ejemplo Body Raw json: 
+
+	{
+    		"text": "Valparaíso es una comuna y ciudad capital de la provincia y Región de Valparaíso. Se sitúa en la zona central de Chile y es el centro histórico, institucional y 			universitario 	del Gran Valparaíso, que forma junto a los municipios de Viña del Mar, Quilpué, Villa Alemana y Concón. Como capital de la región, alberga a la 			Delegación Presidencial y al Gobierno Regional de Valparaíso, además de ser sede del Congreso Nacional, un importante terminal portuario y una de las tres urbes 			chilenas más pobladas. "
+	}
+
+
+6. Consideraciones:
+
+   - Versión de Python: 3.11.4
+
+
+
+
+Lista de artículos de prueba:
+
+
+https://www.t13.cl/noticia/politica/declaraciones-jefe-gabinete-funcionarios-del-hotel-panamericano-dan-cuenta-mons-24-12-2024
+
+https://www.latercera.com/nacional/noticia/tacos-esperas-y-semaforos-sin-funcionar-marcan-intervencion-de-plaza-italia-por-proyecto-nueva-alameda/XC4BUFMYMZBJ3O37XGDTQI2IK4/#
+
+https://www.publimetro.cl/noticias/2024/12/25/cuerpo-de-bomberos-de-los-angeles-suspende-a-comandante-acusado-del-delito-de-usurpacion-de-agua/
+
+https://www.df.cl/empresas/industria/chile-light-departamento-de-agricultura-de-eeuu-ve-notable-cambio
