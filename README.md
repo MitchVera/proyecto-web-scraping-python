@@ -23,11 +23,15 @@ Este proyecto es una aplicación web que utiliza Flask para realizar scraping de
 
 3. **Instalar las dependencias**: Se ejecutan los siguientes comandos para instalar las dependencias necesarias:
 
-pip install Flask
-pip install beautifulsoup4
-pip install requests
-pip install transformers
-pip install torch
+-pip install Flask
+
+-pip install beautifulsoup4
+
+-pip install requests
+
+-pip install Transformers
+
+-pip install torch
 
 
 4. **Ejecutar la base de datos**: 
